@@ -1,0 +1,24 @@
+import pandas as pd
+
+# Create a DataFrame for 10 students with columns: name, roll, attendance
+data = {
+    'name': ['Alice', 'Bob', 'Charlie', 'David', 'Eve', 'Frank', 'Grace', 'Henry', 'Ivy', 'Jack'],
+    'roll': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    'attendance': [0.95, 0.88, 0.92, 0.85, 0.90, 0.87, 0.93, 0.89, 0.91, 0.86]
+}
+
+df = pd.DataFrame(data)
+
+print(df)
+
+data={
+    'name':['Bob','Charlie','David','Eve','Frank','Grace','Henry','Ivy','Jack', 'DEV'],
+    'roll': [2, 3, 4, 5, 6, 7, 8, 9, 10,11],
+    'marks':[88, 92, 85, 90, 87, 93, 89, 91, 86,80]
+}
+df1=pd.DataFrame(data)
+
+df2=df1+df
+print(df2)
+df3=pd.merge(df,df1,on=['name','roll'],how='outer')
+print(df3)
